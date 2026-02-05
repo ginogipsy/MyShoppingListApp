@@ -69,8 +69,8 @@ fun ShoppingListApp(modifier: Modifier = Modifier) {
                         if (itemName.isNotBlank()) {
                             val newItem = ShoppingItem(
                                 id = sItems.size + 1,
-                                name = itemName,
-                                quantity = itemQuantity.toInt()
+                                name = formatItemName(itemName),
+                                quantity = checkQuantity(itemQuantity),
                             )
                             sItems = sItems.plus(newItem)
                             itemName = ""
@@ -126,7 +126,9 @@ fun ShoppingListItem(
                 ),
                 shape = RoundedCornerShape(20)
             ),
+        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(text = item.name, modifier = Modifier.padding(8.dp))
+        Text(text = item.quantity.toString(), modifier = Modifier.padding(8.dp))
     }
 }
