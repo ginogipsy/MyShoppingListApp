@@ -145,6 +145,8 @@ fun ShoppingListItem(
             IconButton (onClick = { onDeleteClick }) {
                 Icon(imageVector = Icons.Default.Delete, contentDescription = null)
             }
+
+            MyMapButton()
         }
     }
 }
