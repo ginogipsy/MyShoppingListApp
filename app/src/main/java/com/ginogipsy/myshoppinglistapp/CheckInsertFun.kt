@@ -6,6 +6,7 @@ fun checkQuantity(quantity: String): Int {
     val intQuantity = quantity.toIntOrNull()
     return when {
         intQuantity == null -> 0
+        intQuantity < 0 -> 0
         else -> intQuantity
     }
 }
